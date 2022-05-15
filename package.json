@@ -4,7 +4,8 @@
   "description": "An API which returns username, followers and follows of Facebook, Instagram and Linked to User.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev":"nodemon index.js"
   },
   "keywords": [
     "express"
