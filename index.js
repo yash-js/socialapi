@@ -1,7 +1,13 @@
 const express = require("express");
 const format = require("date-format");
-
 const app = express();
+
+// Swagger Docs
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./swagger.yaml');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 const PORT = process.env.PORT || 5000;
 
@@ -47,4 +53,5 @@ app.get("/api/v1/linkedin", (req, res) => {
 app.get("/api/v1/:random", (req, res) => {
   res.send(req.params.random);
 });
+
 app.listen(PORT, () => console.log(`Server is Runnig at ${PORT}`));

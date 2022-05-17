@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  title: Social App
+  description: An API which returns username, followers and follows of Facebook, Instagram and Linked to User.
+  version: 1.0.1
+
+servers:
+  - url: http://localhost:5000/api/v1
+    description: Localhost Version of App
+  - url: https://socialapi-lco.herokuapp.com/
+    description: Heroku Hosted API URL
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
