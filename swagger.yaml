@@ -18,3 +18,58 @@ components:
     BearerAuth:
       type: http
       scheme: bearer
+
+paths:
+  /instagram:
+    get:
+      summary: It returns Username, Followers and Follows.
+      responses:
+        "200": # Status Code
+          description: Returns an Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  followers:
+                    type: number
+                  follows:
+                    type: number
+    post:
+      summary: It returns Username, Followers and Follows.
+      responses:
+        "200": # Status Code
+          description: Returns an Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  followers:
+                    type: number
+                  follows:
+                    type: number
+
+  /{random}:
+    get:
+      summary: It returns whatever is there in parameter.
+      parameters:
+        - name: random
+          default: 5
+          in: path
+          schema:
+            type: string
+      responses:
+        "200": # Status Code
+          description: Returns a string.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  params:
+                    type: string
